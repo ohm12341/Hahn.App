@@ -17,6 +17,7 @@ namespace Hahn.ApplicatonProcess.May2020.API
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,7 +31,14 @@ namespace Hahn.ApplicatonProcess.May2020.API
             services.AddDbContext<ApplicantDBContext>(options =>
             options.UseInMemoryDatabase(Configuration.GetConnectionString("DefaultConnection")));
 
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin().AllowAnyHeader();
+                                  });
+            });
 
             services.AddHttpClient("CountryValidatior", c =>
             {
@@ -100,7 +108,7 @@ namespace Hahn.ApplicatonProcess.May2020.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
