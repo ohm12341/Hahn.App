@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "797TooC9yNYUD9wolzJQdtPdm1vctZf6+PzNPtIre4F+3Zd6HYpmmibO+bkvYaDBxc5XtleG0Fa9FVXTFKLwwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\anoop\\source\\Hahn.App\\Hahn.ApplicatonProcess.May2020.Services\\Hahn.ApplicatonProcess.May2020.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\anoop\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\anoop\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
