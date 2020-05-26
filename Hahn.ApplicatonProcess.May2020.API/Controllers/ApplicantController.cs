@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Hahn.ApplicatonProcess.May2020.Data;
+using Hahn.ApplicatonProcess.May2020.Domain.Applicants;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Hahn.ApplicatonProcess.May2020.Data;
-using Hahn.ApplicatonProcess.May2020.Domain.Applicants;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Hahn.ApplicatonProcess.May2020.API.Controllers
 {
@@ -43,9 +41,29 @@ namespace Hahn.ApplicatonProcess.May2020.API.Controllers
         {
             return await _context.Applicants
                                  .AsNoTracking()
-                                 .SingleOrDefaultAsync(m => m.GetID() == id);
+                                 .SingleOrDefaultAsync(m => m.ID == id);
         }
 
+
+        /// <summary>
+        /// Creates an Applicant.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST api/applicant
+        ///     {        
+        ///       "name": "Anoop Vijayan",
+        ///       "family": "Vijayan",
+        ///       "address":"Anu Nivas Cheruvandoor Ettumanoor",
+        ///       "countryOfOrgin": "UK",
+        ///       "email": "anoop8vijayan@gmail.com",
+        ///       "isHired": true,
+        ///       "age": 29,
+        ///       "id" :1     
+        ///     }
+        /// </remarks>
+        /// <param name="applicant">New Applicant</param> 
         // POST api/applicant
         [HttpPost]
         public async Task<int> Post([FromBody]Applicant applicant)
@@ -54,6 +72,28 @@ namespace Hahn.ApplicatonProcess.May2020.API.Controllers
             return await _context.SaveChangesAsync();
         }
 
+
+
+        /// <summary>
+        /// Update an Applicant.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     PUT api/applicant/5
+        ///     {        
+        ///       "name": "Anoop Vijayan",
+        ///       "family": "Vijayan",
+        ///       "address":"Anu Nivas Cheruvandoor Ettumanoor",
+        ///       "countryOfOrgin": "UK",
+        ///       "email": "anoop8vijayan@gmail.com",
+        ///       "isHired": true,
+        ///       "age": 29,
+        ///       "id" :1     
+        ///     }
+        /// </remarks>
+        /// /// <param name="id">applicant Id</param>
+        /// <param name="applicant">Updated Applicant</param> 
         // PUT api/applicant/5
         [HttpPut("{id}")]
         public async Task<int> Put(int id, [FromBody]Applicant applicant)
@@ -62,7 +102,12 @@ namespace Hahn.ApplicatonProcess.May2020.API.Controllers
             return await _context.SaveChangesAsync();
         }
 
-        // DELETE api/authors/5
+
+        /// <summary>
+        /// Delete an Applicant.
+        /// </summary>
+        /// <param name="id">applicant Id</param>
+        // DELETE api/applicant/5
         [HttpDelete("{id}")]
         public async Task<int> Delete(int id)
         {
@@ -71,6 +116,11 @@ namespace Hahn.ApplicatonProcess.May2020.API.Controllers
             return await _context.SaveChangesAsync();
         }
 
+
+        /// <summary>
+        /// Get total number of Applicants.
+        /// </summary>
+        // GET api/count
         [HttpGet("count")]
         public async Task<int> GetCount()
         {

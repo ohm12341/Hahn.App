@@ -3,7 +3,6 @@ using Hahn.ApplicatonProcess.May2020.API.Filters;
 using Hahn.ApplicatonProcess.May2020.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
+using System.Reflection;
 
 namespace Hahn.ApplicatonProcess.May2020.API
 {
@@ -29,7 +29,8 @@ namespace Hahn.ApplicatonProcess.May2020.API
             services.AddDbContext<ApplicantDBContext>(options =>
             options.UseInMemoryDatabase(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddHttpClient("CountryValidatior",c=> {
+            services.AddHttpClient("CountryValidatior", c =>
+            {
 
                 c.BaseAddress = new Uri("https://restcountries.eu/rest/v2/");
             });
@@ -38,9 +39,9 @@ namespace Hahn.ApplicatonProcess.May2020.API
             services.AddMvc(opt =>
             {
                 opt.Filters.Add(typeof(GlobalModalValidationFilter));
-            }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>()); 
-           
-            
+            }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+
             services.AddControllers(config =>
             {
 
@@ -58,7 +59,7 @@ namespace Hahn.ApplicatonProcess.May2020.API
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Shayne Boyer",
+                        Name = "Hahn Support",
                         Email = string.Empty,
                         Url = new Uri("https://www.google.com"),
                     },
@@ -68,6 +69,10 @@ namespace Hahn.ApplicatonProcess.May2020.API
                         Url = new Uri("https://example.com/license"),
                     }
                 });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
 
