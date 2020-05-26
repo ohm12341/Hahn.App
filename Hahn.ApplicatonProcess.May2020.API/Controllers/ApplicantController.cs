@@ -1,7 +1,11 @@
-﻿using Hahn.ApplicatonProcess.May2020.Data;
+﻿using Hahn.ApplicatonProcess.May2020.API.Models;
+using Hahn.ApplicatonProcess.May2020.Data;
 using Hahn.ApplicatonProcess.May2020.Domain.Applicants;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,10 +17,17 @@ namespace Hahn.ApplicatonProcess.May2020.API.Controllers
     public class ApplicantController : ControllerBase
     {
         private readonly ApplicantDBContext _context;
-
-        public ApplicantController(ApplicantDBContext applicantDBContext)
+        private readonly IHttpContextAccessor _httpContextAccessor  ;
+        private readonly ILogger _microsoftlogger;
+        private readonly ILogger _systemlogger;
+        public ApplicantController(ApplicantDBContext applicantDBContext,
+            ILoggerFactory loggerFactory,
+            IHttpContextAccessor  httpContextAccessor)
         {
             _context = applicantDBContext;
+            _httpContextAccessor = httpContextAccessor;
+            _microsoftlogger = loggerFactory.CreateLogger("Microsoft");
+            _systemlogger = loggerFactory.CreateLogger("System");
         }
         /// <summary>
         /// Gets all available Applicant
@@ -66,10 +77,12 @@ namespace Hahn.ApplicatonProcess.May2020.API.Controllers
         /// <param name="applicant">New Applicant</param> 
         // POST api/applicant
         [HttpPost]
-        public async Task<int> Post([FromBody]Applicant applicant)
+        public async Task<Tuple<Applicant, Link>> Post([FromBody]Applicant applicant)
         {
             _context.Add(applicant);
-            return await _context.SaveChangesAsync();
+            var posteddata = await _context.SaveChangesAsync();
+            var request = _httpContextAccessor.HttpContext.Request;
+            return new Tuple<Applicant, Link>(applicant, new Link($"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}/api/applicant/{applicant.ID}" ,"SELF","GET"));
         }
 
 

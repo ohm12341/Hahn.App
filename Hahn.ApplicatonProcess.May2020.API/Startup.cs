@@ -3,6 +3,7 @@ using Hahn.ApplicatonProcess.May2020.API.Filters;
 using Hahn.ApplicatonProcess.May2020.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,8 @@ namespace Hahn.ApplicatonProcess.May2020.API
         {
             services.AddDbContext<ApplicantDBContext>(options =>
             options.UseInMemoryDatabase(Configuration.GetConnectionString("DefaultConnection")));
+
+
 
             services.AddHttpClient("CountryValidatior", c =>
             {
@@ -81,13 +84,19 @@ namespace Hahn.ApplicatonProcess.May2020.API
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            loggerFactory.WithFilter(new FilterLoggerSettings
+            {
+
+                { "Microsoft", LogLevel.Information },
+                { "System", LogLevel.Error }
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
