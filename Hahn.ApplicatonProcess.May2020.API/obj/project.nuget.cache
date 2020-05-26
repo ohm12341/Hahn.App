@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Cw7t6CSHOa4mqOan5OLnHSgMMCWlLrY+GkaTV7a4WSej5BQGHVDWwd80Vj7m39N9/mTXwu2KLHNib7oVlcwifQ==",
+  "dgSpecHash": "nyCK/qfo+iJa+AItPJZek+UtJkI1COk90ubU4Tg58m/48CiCTaYiPwYE76QymgNgU8r7Y5iP4Gk3a3rkTCZrow==",
   "success": true,
   "projectFilePath": "C:\\Users\\anoop\\source\\Hahn.App\\Hahn.ApplicatonProcess.May2020.API\\Hahn.ApplicatonProcess.May2020.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anoop\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
+    "C:\\Users\\anoop\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
+    "C:\\Users\\anoop\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
     "C:\\Users\\anoop\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\anoop\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\anoop\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

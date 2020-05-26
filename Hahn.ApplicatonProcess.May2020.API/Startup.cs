@@ -1,3 +1,5 @@
+using FluentValidation.AspNetCore;
+using Hahn.ApplicatonProcess.May2020.API.Filters;
 using Hahn.ApplicatonProcess.May2020.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,11 +29,23 @@ namespace Hahn.ApplicatonProcess.May2020.API
             services.AddDbContext<ApplicantDBContext>(options =>
             options.UseInMemoryDatabase(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddHttpClient("CountryValidatior",c=> {
+
+                c.BaseAddress = new Uri("https://restcountries.eu/rest/v2/");
+            });
+
+
             services.AddMvc(opt =>
             {
-                opt.Filters.Add(new RequireHttpsAttribute());
+                opt.Filters.Add(typeof(GlobalModalValidationFilter));
+            }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>()); 
+           
+            
+            services.AddControllers(config =>
+            {
+
+                config.Filters.Add(new GlobalModalValidationFilter());
             });
-            services.AddControllers();
 
 
             services.AddSwaggerGen(c =>
