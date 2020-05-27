@@ -57,7 +57,7 @@ namespace Hahn.ApplicatonProcess.May2020.API
             {
 
                 config.Filters.Add(new GlobalModalValidationFilter());
-            });
+            }).AddNewtonsoftJson();
 
 
             services.AddSwaggerGen(c =>

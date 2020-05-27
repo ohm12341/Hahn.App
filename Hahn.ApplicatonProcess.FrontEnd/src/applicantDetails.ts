@@ -8,7 +8,7 @@ selectedId;
 constructor(private applicantservice:ApplicantService){
 }
 created() {
-  this.applicantservice.GetAll().then(contacts => this.applicantdetails = contacts);
+  //this.applicantservice.GetAll().then(contacts => this.applicantdetails = contacts);
 }
 
 select(contact) {

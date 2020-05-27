@@ -94,8 +94,10 @@ OnReset(){
 addApplicant(){
       this.controller.validate()
       .then(result => {
-        if (result.valid)
-        alert(JSON.stringify(this.applicants));
+        if (result.valid){
+       
+        this.applicantservice.Add(this.applicants);
+        }
         else
           {
 

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cAR7WSjsU0nZ6S++OO7QJ4BvnU1WXzkLH7SDtW0ys+SK/DdZ7ONW5hy4JnIfNu5ZLekLxrwL/q0FqCZxPFcFOQ==",
+  "dgSpecHash": "tTWIjFqfSyblm8cwi25Lwb0kx0MaEBDPjpANzJ+I2bCjuRd1bsgfWrkliJzsA4zSGRF8B/be7IMVcJ11nizy1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\anoop\\source\\Hahn.App\\Hahn.ApplicatonProcess.May2020.Domain\\Hahn.ApplicatonProcess.May2020.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\anoop\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

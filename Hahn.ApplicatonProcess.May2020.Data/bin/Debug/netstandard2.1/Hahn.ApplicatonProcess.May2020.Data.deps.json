@@ -279,6 +279,9 @@
         }
       },
       "Hahn.ApplicatonProcess.May2020.Domain/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
         "runtime": {
           "Hahn.ApplicatonProcess.May2020.Domain.dll": {}
         }

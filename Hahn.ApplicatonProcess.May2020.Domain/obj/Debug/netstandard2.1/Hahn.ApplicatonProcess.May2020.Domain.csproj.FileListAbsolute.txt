@@ -10,8 +10,9 @@ C:\Users\anoop\source\repos\Hahn.ApplicatonProcess.Application\Hahn.ApplicatonPr
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\bin\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.deps.json
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\bin\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.dll
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\bin\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.pdb
-C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.csproj.CoreCompileInputs.cache
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.AssemblyInfoInputs.cache
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.AssemblyInfo.cs
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.dll
 C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.pdb
+C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.csprojAssemblyReference.cache
+C:\Users\anoop\source\Hahn.App\Hahn.ApplicatonProcess.May2020.Domain\obj\Debug\netstandard2.1\Hahn.ApplicatonProcess.May2020.Domain.csproj.CoreCompileInputs.cache
