@@ -1,11 +1,14 @@
 {
   "compileOnSave": false,
+  "types": [ "i18next", "i18next-xhr-backend" ]
+    ,
   "compilerOptions": {
     "module": "esnext",
     "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@types"
     ],
+    
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,

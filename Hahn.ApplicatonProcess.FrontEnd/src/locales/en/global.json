@@ -1,0 +1,12 @@
+{
+    
+    "friend": "friend",
+    "add_Applicant": "Add Applicant",
+    "add_Applicanttitle": "add a Applicant for the current role",
+    "family":"Family",
+    "name": "Name",
+    "age":"Age",
+    "country":"Country  of orgin",
+    "address":"Address",
+    "email":"Email"
+  }

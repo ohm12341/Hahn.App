@@ -16,15 +16,13 @@ export class ApplicantService {
     }
 
     GetAll() {
-
-      
-  
-
-  
        return this.httpClient.get('')
-            .then(response => JSON.stringify(response.content))
+            .then(response =>response.content)
             .catch(error => console.log(error));
-
-          
     }
+    Add(applicant) {
+      return this.httpClient.get('')
+           .then(response =>response.content)
+           .catch(error => console.log(error));
+   }
 }
