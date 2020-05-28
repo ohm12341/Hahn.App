@@ -1,0 +1,31 @@
+<template>
+    <ux-dialog>
+      <ux-dialog-body>
+        <h2>API Error</h2>
+        
+          <div class="card" style="width: 30rem;">
+            <div class="card-header">
+             Status Code  : ${resposnse.status}
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Error :  ${resposnse.title}</li>
+            </ul>
+            <div class="contact-list">
+                <div class="list-group">
+                  <a repeat.for="error of resposnse.PropertyError" >
+                   
+                    <small>${error}</small>
+                  </a>
+                </div>
+              </div>
+           </div>
+         
+      </ux-dialog-body>
+  
+      <ux-dialog-footer>
+        <button click.trigger="controller.cancel()">Cancel</button>
+        <button click.trigger="controller.ok(person)">Ok</button>
+      </ux-dialog-footer>
+    </ux-dialog>
+  </template>
+  

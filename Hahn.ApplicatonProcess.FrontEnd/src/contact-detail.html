@@ -1,0 +1,47 @@
+<template>
+    <div  class="card" show.bind="isVisible">
+      <div class="card-header text-white bg-primary">
+        Applicant added successfully with below details
+      </div>
+      <div class="card-body">
+        <form role="form">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Name</label>
+            <div class="col-md-9">
+           ${applicantData.name}
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Family</label>
+            <div class="col-md-9">
+             ${applicantData.family}
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Email</label>
+            <div class="col-md-9">
+              ${applicantData.email}
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Age</label>
+            <div class="col-md-9">
+             $(applicantData.phoneNumber}
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label">Country</label>
+            <div class="col-md-9">
+             ${applicantData.countryOfOrgin}
+            </div>
+          </div>
+        </form>
+    
+      </div>
+    </div>
+  </template>
+  

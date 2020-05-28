@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hahn.ApplicatonProcess.May2020.API</name>
+    </assembly>
+    <members>
+        <member name="M:Hahn.ApplicatonProcess.May2020.API.Controllers.ApplicantController.GetAll">
+            <summary>
+            Gets all available Applicant
+            </summary>
+            <returns>List of Applicant</returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.May2020.API.Controllers.ApplicantController.Get(System.Int32)">
+            <summary>
+            Gets an individual Applicant by Id
+            </summary>
+            <param name="id">Applicant identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.May2020.API.Controllers.ApplicantController.Post(Hahn.ApplicatonProcess.May2020.Domain.Applicants.Applicant)">
+            <summary>
+            Creates an Applicant.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST api/applicant
+                {        
+                  "name": "Anoop Vijayan",
+                  "family": "Vijayan",
+                  "address":"Anu Nivas Cheruvandoor Ettumanoor",
+                  "countryOfOrgin": "UK",
+                  "email": "anoop8vijayan@gmail.com",
+                  "isHired": true,
+                  "age": 29,
+                  "id" :1     
+                }
+            </remarks>
+            <param name="applicant">New Applicant</param> 
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.May2020.API.Controllers.ApplicantController.Put(System.Int32,Hahn.ApplicatonProcess.May2020.Domain.Applicants.Applicant)">
+            <summary>
+            Update an Applicant.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT api/applicant/5
+                {        
+                  "name": "Anoop Vijayan",
+                  "family": "Vijayan",
+                  "address":"Anu Nivas Cheruvandoor Ettumanoor",
+                  "countryOfOrgin": "UK",
+                  "email": "anoop8vijayan@gmail.com",
+                  "isHired": true,
+                  "age": 29,
+                  "id" :1     
+                }
+            </remarks>
+            /// <param name="id">applicant Id</param>
+            <param name="applicant">Updated Applicant</param> 
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.May2020.API.Controllers.ApplicantController.Delete(System.Int32)">
+            <summary>
+            Delete an Applicant.
+            </summary>
+            <param name="id">applicant Id</param>
+        </member>
+        <member name="M:Hahn.ApplicatonProcess.May2020.API.Controllers.ApplicantController.GetCount">
+            <summary>
+            Get total number of Applicants.
+            </summary>
+        </member>
+    </members>
+</doc>

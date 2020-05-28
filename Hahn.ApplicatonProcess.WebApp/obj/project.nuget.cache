@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CcUQT1Qfx1Wl/btHqh4kagSXX/7+C5P8ePq5uzwoQdWbpW8r5fBGA/E5yxzH5a8RlZRVCWb6A/FmRBkHhNHvxQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\anoop\\source\\Hahn.App\\Hahn.ApplicatonProcess.WebApp\\Hahn.ApplicatonProcess.WebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\anoop\\.nuget\\packages\\microsoft.typescript.msbuild\\3.9.2\\microsoft.typescript.msbuild.3.9.2.nupkg.sha512"
+  ],
+  "logs": []
+}
