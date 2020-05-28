@@ -20,9 +20,9 @@ constructor(private applicantService: ApplicantService){
       config.options.pushState = true;
       config.options.root = '/';
       config.map([
-        { route: '',              moduleId: PLATFORM.moduleName('no-selection'),   title: 'Select' },
-        { route: 'contacts/:id',  moduleId: PLATFORM.moduleName('contact-detail'), name:'contacts' },
-        { route: 'applicant/:id',  moduleId: PLATFORM.moduleName('contact-detail'), name:'applicant' }
+        { route: '/',  moduleId: PLATFORM.moduleName('no-selection'), name:'select' },
+        { route: '/:applicant',  moduleId: PLATFORM.moduleName('contact-detail'), name:'applicant' }
+        
       ]);
   
       this.router = router;

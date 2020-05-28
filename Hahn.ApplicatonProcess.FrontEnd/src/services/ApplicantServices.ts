@@ -5,18 +5,19 @@ import {DialogService} from 'aurelia-dialog';
 import {ApiErrorDialog} from './ApiErrorDialog';
 import {ApiError} from '../ApiError'
 import { isUndefined } from 'util';
-@inject(HttpClient,DialogService)
+import { Router,RedirectToRoute  } from 'aurelia-router';
+
+@inject(HttpClient,DialogService,Router,RedirectToRoute )
 export class ApplicantService {
     
     
-    constructor(private httpClient: HttpClient,private dialogService: DialogService) {
+    constructor(private httpClient: HttpClient,
+      private dialogService: DialogService,
+      private router:Router,
+      private redirectToRoute :RedirectToRoute ) {
+
        this.httpClient=httpClient
-      
-      //  this.httpClient .configure(x => {
-      //   x.withBaseUrl('https://localhost:44301/api/Applicant');
-        
-      // });
-      httpClient.configure(config => {
+        httpClient.configure(config => {
         config
           .useStandardConfiguration()
           .withBaseUrl('https://localhost:44301/api/Applicant')
@@ -35,22 +36,6 @@ export class ApplicantService {
       //       .catch(error => console.log(error));
     }
     Add(applicant) {
-      // return this.httpClient.post('',applicant)
-      //      .then(response =>response.content)
-      //      .catch(error => {
-
-      //       alert(error)
-      //       this.dialogService.open({ viewModel: ApiErrorDialog, model: error, lock: false }).whenClosed(response => {
-      //         if (!response.wasCancelled) {
-      //           console.log('good - ', response.output);
-      //         } else {
-      //           console.log('bad');
-      //         }
-      //         console.log(response.output);
-      //       });
-
-      //      });
-
       return this.httpClient
       .fetch('', {
         method: 'post',
@@ -58,7 +43,10 @@ export class ApplicantService {
       })
       .then(response => response.json())
       .then(savedComment => {
-        alert(`Saved comment! ID: ${savedComment.id}`);
+       var successView= new RedirectToRoute('applicant',{applicant:JSON.stringify(applicant)})
+       successView.navigate(this.router)
+
+       //this.router.navigateToRoute('applicant',{id:1});
       })
       .catch(error => {
         error.json().then(error=>{
