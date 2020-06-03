@@ -1,10 +1,4 @@
 # Hahn.App
-First, let me thanks Hahn Software for allowing me to take part in the selection process.
-
-This repo which I am sharing consists of both UI front end developed in Aurelia and web API developed in .net core 3.1.
-
-I have tried to achieve all the requirement as mention in the mail Tobias. But since I am currently working for a client I didn't get much time to work in the solution. I was only able to spend about 10 to 12 hours on the problem you have shared with me.
-Also, aurelia being a new front end technology for me I ended up spending more time than expected on the front end. Also, I didn't get much time for testing. So I am expecting some bugs and also I was not able to fine-tune the application. But I believe I did a good job in this short period. 
 
 To run the solution.
 
